@@ -2,15 +2,22 @@ version: '3'
 
 services:
 
-  oscar-ort:
-    build: ./oscar-ort/
-    volumes:
-      - ./appdata:/tmp/ort
+  mongo:
+    image: mongo:4.0
+    expose:
+      - 27017
 
   oscar-controller:
     build: ./oscar-controller/
     ports:
       - 8081:8081
+    volumes:
+      - ./appdata:/tmp/ort
+    depends_on:
+      - mongo
+
+  oscar-ort:
+    build: ./oscar-ort/
     volumes:
       - ./appdata:/tmp/ort
 
