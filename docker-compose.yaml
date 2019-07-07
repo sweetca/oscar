@@ -11,26 +11,28 @@ services:
     build: ./oscar-controller/
     ports:
       - 8081:8081
+    environment:
+      - JAVA_OPTS=-Dspring.profiles.active=prod
     volumes:
-      - ./appdata:/tmp/ort
+      - /tmp/oscar:/tmp/oscar
     depends_on:
       - mongo
-
-  oscar-ort:
-    build: ./oscar-ort/
-    volumes:
-      - ./appdata:/tmp/ort
 
   oscar-downloader:
     build: ./oscar-downloader/
     ports:
       - 8082:8082
+    environment:
+      - JAVA_OPTS=-Dspring.profiles.active=prod
     volumes:
-      - ./appdata:/tmp/ort
+      - /tmp/oscar:/tmp/ort
+
+  oscar-ort:
+    build: ./oscar-ort/
+    volumes:
+      - /tmp/oscar:/tmp/oscar
 
   oscar-fossology:
     build: ./oscar-fossology/
-    ports:
-      - 3000:3000
     volumes:
-      - ./appdata:/tmp/ort
+      - /tmp/oscar:/tmp/oscar
