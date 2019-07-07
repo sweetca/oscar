@@ -1,0 +1,12 @@
+[submodule "oscar-ort"]
+	path = oscar-ort
+	url = https://github.com/codescoop/oscar-ort
+[submodule "oscar-downloader"]
+	path = oscar-downloader
+	url = https://github.com/codescoop/oscar-downloader
+[submodule "oscar-fossology"]
+	path = oscar-fossology
+	url = https://github.com/codescoop/oscar-fossology
+[submodule "oscar-controller"]
+	path = oscar-controller
+	url = https://github.com/codescoop/oscar-controller
