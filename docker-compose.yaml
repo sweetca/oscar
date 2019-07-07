@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  oscar-ort:
+    build: ./oscar-ort/
+    volumes:
+      - ./appdata:/tmp/ort
+
+  oscar-controller:
+    build: ./oscar-controller/
+    ports:
+      - 8081:8081
+    volumes:
+      - ./appdata:/tmp/ort
+
+  oscar-downloader:
+    build: ./oscar-downloader/
+    ports:
+      - 8082:8082
+    volumes:
+      - ./appdata:/tmp/ort
+
+  oscar-fossology:
+    build: ./oscar-fossology/
+    ports:
+      - 3000:3000
+    volumes:
+      - ./appdata:/tmp/ort
