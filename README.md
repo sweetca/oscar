@@ -8,9 +8,7 @@ Subprojects:
 
 ### To start
 ```
-git submodule deinit --all -f
-git submodule init
-git submodule update
+git submodule update --init --recursive --remote
 
 docker-compose build
 docker-compose up
