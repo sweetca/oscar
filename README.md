@@ -1,5 +1,7 @@
 #### OSCAR
 
+### License MIT
+
 Subprojects:
 1) downloader
 2) controller
